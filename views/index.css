@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+caption, h1, form {
+    padding: 4px;
+    margin: auto;
+    font-size: 24px;
+    font-weight: 700;
+    color: hotpink;
+    /* background-color: gray; */
+    width: fit-content;
+}
+button{
+    padding: 4px;
+    margin: auto;
+    width: fit-content;
+    font-size: 16px;
+    background-color: hotpink;
+    color: white;
+
+}
+th,
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color: hotpink;
+    color: black;
+}
+input{
+    padding: 8px;
+
+}

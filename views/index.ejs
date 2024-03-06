@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="content">
+        <h1>Khoa hoc Form</h1>
+        <form action="/add" method="POST" enctype="multipart/form-data">
+            <input type="text" name="id" placeholder="Nhap id...">
+            <br>
+            <input type="text" name="name" placeholder="Nhap ten mon...">
+            <br>
+
+            <input type="text" name="course_type" placeholder="Nhap loai mon...">
+            <br>
+
+            <input type="text" name="semester" placeholder="Nhap hoc ky...">
+            <br>
+
+            <input type="text" name="department" placeholder="Nhap khoa...">
+            <br>
+            <input type="file" name="image" accept="image/*"> <!-- Thêm trường input cho hình ảnh -->
+            <br>
+
+            <button type="submit">Them khoa hoc</button>
+        </form>
+        <form action="/delete" method="POST" >
+        <table>
+            <caption>Danh sach mon hoc</caption>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Ten mon hoc</th>
+                    <th>Loai mon hoc</th>
+                    <th>Hoc ky</th>
+                    <th>Khoa</th>
+                    <th>Hinh anh</th>
+                    <th>Chon</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i<data.length; i++){ %>
+                    <tr>
+                        <td>
+                            <%= data[i].id %>
+                        </td>
+                        <td>
+                            <%= data[i].name %>
+                        </td>
+                        <td>
+                            <%= data[i].course_type %>
+                        </td>
+                        <td>
+                            <%= data[i].semester %>
+                        </td>
+                        <td>
+                            <%= data[i].department %>
+                        </td>
+                        <td>
+                            <img src="<%= data[i].image_url %>" alt="avt_<%= data[i].id %>"  style="max-width: 100px; max-height: 100px;">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="selectedCourses" value="<%= data[i].id %>">
+                        </td>
+
+                    </tr>
+                    <% }; %>
+            </tbody>
+        </table>
+        <button type="submit">Xoa khoa hoc</button>
+    </form>
+
+    </div>
+</body>
+
+</html>
